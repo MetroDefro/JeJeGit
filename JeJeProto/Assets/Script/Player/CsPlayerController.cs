@@ -75,7 +75,7 @@ public class CsPlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //콜리전 태그 확인, 그라운드
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "BBlock" || collision.gameObject.tag == "MBlock" || collision.gameObject.tag == "SBlock" || collision.gameObject.tag == "Block")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "BBlock" || collision.gameObject.tag == "MBlock" || collision.gameObject.tag == "RBlock" || collision.gameObject.tag == "SBlock" || collision.gameObject.tag == "Block")
         {
             isJump = false;
             playerAnimator.SetBool("Jump", false);
