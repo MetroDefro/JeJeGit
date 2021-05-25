@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1522144621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522144622}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522144622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522144621}
+  m_LocalRotation: {x: -0, y: 0.9914449, z: -0, w: -0.13052632}
+  m_LocalPosition: {x: -0.004403208, y: 0.020000458, z: 0.0022540377}
+  m_LocalScale: {x: 0.099999964, y: 0.1, z: 0.099999964}
+  m_Children: []
+  m_Father: {fileID: 1430323361419570823}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &105087007678709910
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430323361419570823}
   - component: {fileID: 9030707111596622845}
+  - component: {fileID: 484767005}
   m_Layer: 0
   m_Name: brokendog
   m_TagString: Untagged
@@ -323,12 +354,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702967213912874132}
-  m_LocalRotation: {x: -0, y: -0.9914449, z: -0, w: -0.13052632}
+  m_LocalRotation: {x: -0, y: -0.99144495, z: 0, w: -0.13052607}
   m_LocalPosition: {x: 5.7514544, y: 9.706, z: -5.0667543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2342901085985005826}
   - {fileID: 9164003920048792233}
+  - {fileID: 1522144622}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -195, z: 0}
@@ -351,6 +383,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &484767005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702967213912874132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2268e7f8499b1c84dba7ca764ce004ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toy: {fileID: 0}
+  id: 0
+  nowId: 0
+  MG1: {fileID: 7838568774973608213, guid: dcde4a94deb5d4648b69570aed06571b, type: 3}
+  MG2: {fileID: 317891250556471112, guid: f7fbbcd24fc01a446a0750b12eecbb6c, type: 3}
+  maxC: 25
+  Bnum: 8
+  pointAmount: 4
+  endAmound: 2
+  parts: 010000000200000000000000000000000000000000000000
+  Magic: {fileID: 100004, guid: 87845abcf6b5d554abcfa2bd26d5728c, type: 3}
+  MagicT: {fileID: 0}
 --- !u!1 &3403552880292566613
 GameObject:
   m_ObjectHideFlags: 0
