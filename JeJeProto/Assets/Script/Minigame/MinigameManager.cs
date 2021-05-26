@@ -55,7 +55,7 @@ public class MinigameManager : MonoBehaviour
 
     }
 
-    public void StartGame(GameObject M1, GameObject M2, int PA, int EA, int MC, int BN)
+    public void StartGame(GameObject M1, GameObject M2, int PA, int EA, int MC, int BN, int RT)
     {
         Vector3 pos1 = new Vector3(10, 11, 0);
         Vector3 pos2 = new Vector3(10, 11, 0);
@@ -79,7 +79,7 @@ public class MinigameManager : MonoBehaviour
         isMini2 = false;
 
         timerT = GameObject.Find("TimerT").transform.GetComponent<Text>();
-        rimitT = 31;
+        rimitT = RT;
         rimitC = maxC;
     }
     // Update is called once per frame

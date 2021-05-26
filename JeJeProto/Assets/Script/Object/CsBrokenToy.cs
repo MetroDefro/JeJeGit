@@ -20,6 +20,7 @@ public class CsBrokenToy : MonoBehaviour
     public int Bnum;
     public int pointAmount;
     public int endAmound;
+    public int RimitT;
 
     //고친 장난감 이미지
     //public GameObject fixedToy;
@@ -109,7 +110,7 @@ public class CsBrokenToy : MonoBehaviour
 
         MinigameManager.instance.Toy = this.gameObject;
         CameraManager.instance.SubCameraOn();
-        MinigameManager.instance.StartGame(MG1, MG2, pointAmount, endAmound, maxC, Bnum);
+        MinigameManager.instance.StartGame(MG1, MG2, pointAmount, endAmound, maxC, Bnum, RimitT);
 
     }
 
