@@ -53,7 +53,7 @@ MonoBehaviour:
   isGameOver: 0
   isLoading: 0
   canvasUI: {fileID: 0}
-  pet: 0
+  pet: 3
   book: {fileID: 0}
   bear: {fileID: 0}
   stack: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   miniText: {fileID: 0}
   canvasUI: {fileID: 0}
   sprites:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
