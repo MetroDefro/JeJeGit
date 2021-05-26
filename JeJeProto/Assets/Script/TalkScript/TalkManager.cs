@@ -141,7 +141,7 @@ public class TalkManager : MonoBehaviour
     //미니창
     public void SmallTalk(int id)
     {
-        string talkData = talkStorage.GetTalk(id, talkIndex);
+        string talkData = talkStorage.GetTalk2(id);
 
         miniText.text = talkData;
 

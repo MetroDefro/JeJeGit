@@ -99,11 +99,11 @@ public class TalkStorage : MonoBehaviour
         });
 
         talkData.Add(3, new string[] {
-            "자석 스킬은 키보드 3번을 누르고 스킬 사용 가능한 블록에 마우스 왼쪽 클릭으로는 당기고 마우스 오른쪽 클릭은 밀 수 있어."
+            "자석 스킬은 키보드 2번을 누르고 스킬 사용 가능한 블록에 마우스 왼쪽 클릭으로는 당기고 마우스 오른쪽 클릭은 밀 수 있어."
         });
 
         talkData.Add(4, new string[] {
-            "쌓기 스킬은 키보드 2번을 누른 뒤 원하는 장소에 마우스 왼쪽 클릭을 하면 스킬을 사용할 수 있어."
+            "쌓기 스킬은 키보드 3번을 누른 뒤 원하는 장소에 마우스 왼쪽 클릭을 하면 스킬을 사용할 수 있어."
         });
 
         talkData.Add(5, new string[] {
@@ -124,6 +124,11 @@ public class TalkStorage : MonoBehaviour
 
         talkData.Add(9, new string[] {
             "앞에 있는 텐트에서는 세이브를 하고 상자에서는 인형을 고치기 위한 재료를 구할 수 있어."
+        });
+
+        // 샘플 스테이지 UI 스크립트
+        talkData.Add(10, new string[] {
+            "장난감 사이에서 들리는 소문으로 물 속에도 길이 있다고 하던데 우리가 찾아보는건 어때?"
         });
 
         // 1스테이지 끝
@@ -158,5 +163,10 @@ public class TalkStorage : MonoBehaviour
             return null;
         else
             return talkData[id][talkIndex];
+    }
+
+    public string GetTalk2(int id)
+    {
+        return talkData[id][0];
     }
 }
