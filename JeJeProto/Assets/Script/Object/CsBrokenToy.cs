@@ -50,7 +50,8 @@ public class CsBrokenToy : MonoBehaviour
     {
         if (GameManager.instance.inter)
             Inter();
-        Talking();
+        if (id != 0)
+            Talking();
         /*
         if (!TalkManager.instance.isTalking && nowId == id+2)
             Destroy(gameObject);
@@ -84,7 +85,8 @@ public class CsBrokenToy : MonoBehaviour
 
         if (fix)
         {
-            TalkManager.instance.Talk(nowId);
+            if(id != 0)
+                TalkManager.instance.Talk(nowId);
             return;
         }
 
@@ -95,7 +97,8 @@ public class CsBrokenToy : MonoBehaviour
     {
         // 처음 상호작용하면 일어날 이벤트 작성.
         animator.SetBool("Connect", true);
-        TalkManager.instance.Talk(nowId);
+        if (id != 0)
+            TalkManager.instance.Talk(nowId);
     }
 
     private void IsCanFix()
@@ -126,7 +129,8 @@ public class CsBrokenToy : MonoBehaviour
 
         //고쳐지면 나올 이벤트
         nowId = id + 2;
-        TalkManager.instance.Talk(nowId);
+        if (id != 0)
+            TalkManager.instance.Talk(nowId);
 
         for (int i = 0; i < parts.Length; i++)
         {
@@ -152,7 +156,8 @@ public class CsBrokenToy : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TalkManager.instance.Talk(nowId);
+            if (id != 0)
+                TalkManager.instance.Talk(nowId);
         }          
     }
 

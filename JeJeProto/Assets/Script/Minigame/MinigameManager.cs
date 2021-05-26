@@ -19,7 +19,9 @@ public class MinigameManager : MonoBehaviour
     public bool isMini2;
 
     private Transform buttonFamily;
+    private Transform buttonFamily2;
     private Transform[] buttons;
+    private Transform[] buttons2;
 
     private GameObject MG1;
     private GameObject MG2;
@@ -71,6 +73,11 @@ public class MinigameManager : MonoBehaviour
 
         buttonFamily = GameObject.Find("ButtonFamily").transform;
         buttons = buttonFamily.gameObject.GetComponentsInChildren<Transform>();
+        if(GameObject.Find("ButtonFamily (1)") != null)
+        {
+            buttonFamily2 = GameObject.Find("ButtonFamily (1)").transform;
+            buttons2 = buttonFamily2.gameObject.GetComponentsInChildren<Transform>();
+        }
 
         Mini1UI = GameObject.Find("MiniGameUI1");
         Mini2UI = GameObject.Find("MiniGameUI2");
@@ -151,7 +158,23 @@ public class MinigameManager : MonoBehaviour
                     ends++;
             }
         }
+        if(buttons2 != null)
+        {
+            for (int i = 1; i < buttons2.Length; i++)
+            {
+                if (buttons2[i].gameObject.GetComponent<MinigameLine>().clicked)
+                {
+                    sum++;
+                    if (buttons2[i].gameObject.GetComponent<MinigameLine>().strongButton)
+                        point++;
+                    if (buttons2[i].gameObject.GetComponent<MinigameLine>().endButton)
+                        ends++;
+                }
+            }
+        }
+
         // end 다 채웠나?
+        Debug.Log(ends);
         if (endAmount != ends)
             return;
         //먼저 목표 수만큼 실이 있는지 확인

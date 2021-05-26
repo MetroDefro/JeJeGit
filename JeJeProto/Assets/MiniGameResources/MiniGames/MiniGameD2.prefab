@@ -144,11 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249749979065}
+  pixel: {fileID: 2683888436579223296}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
-  endButton: 1
+  endButton: 0
   strongButton: 0
   isTrap: 0
 --- !u!1 &288138284
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249354420891}
+  pixel: {fileID: 8432205367274048301}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891248539019241}
+  pixel: {fileID: 7290951377503812808}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -597,12 +597,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249941342926}
+  pixel: {fileID: 6625819435337339161}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 0
+  strongButton: 1
   isTrap: 0
 --- !u!1 &601146253
 GameObject:
@@ -748,13 +748,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891250396878454}
+  pixel: {fileID: 5361298352320623093}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 1
+  isTrap: 0
 --- !u!1 &875055714
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,12 +899,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891248790997802}
+  pixel: {fileID: 342920072880068768}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 0
+  strongButton: 1
   isTrap: 0
 --- !u!1 &935003525
 GameObject:
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249929744249}
+  pixel: {fileID: 2452459883714949850}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891250301698671}
+  pixel: {fileID: 7460039315537430833}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249178017244}
+  pixel: {fileID: 7770982910288753923}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891248949225065}
+  pixel: {fileID: 7471411714165106787}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -1654,12 +1654,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891250142020354}
+  pixel: {fileID: 2991625389253053612}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 1
+  strongButton: 0
   isTrap: 0
 --- !u!1 &1280533555
 GameObject:
@@ -1805,12 +1805,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249115222749}
+  pixel: {fileID: 328808176594106495}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
-  endButton: 0
-  strongButton: 1
+  endButton: 1
+  strongButton: 0
   isTrap: 0
 --- !u!1 &1582928883
 GameObject:
@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891250273671063}
+  pixel: {fileID: 5750358168226317774}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891248844204751}
+  pixel: {fileID: 4750606129464469212}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891249316224362}
+  pixel: {fileID: 2785624655918358151}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
@@ -2470,13 +2470,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c209793924ef7b7468846f3e97bba880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: {fileID: 317891250425622040}
+  pixel: {fileID: 4561440895801156861}
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 1
+  isTrap: 0
 --- !u!1 &259002922276864266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,7 +3066,7 @@ MonoBehaviour:
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 1
+  isTrap: 0
 --- !u!1 &317891248690870133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3847,7 @@ MonoBehaviour:
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 0
+  strongButton: 1
   isTrap: 0
 --- !u!1 &317891248990423624
 GameObject:
@@ -3997,7 +3997,7 @@ MonoBehaviour:
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
-  endButton: 0
+  endButton: 1
   strongButton: 0
   isTrap: 0
 --- !u!1 &317891249007404579
@@ -4301,7 +4301,7 @@ MonoBehaviour:
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 1
+  isTrap: 0
 --- !u!1 &317891249115222748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4411,7 +4411,7 @@ GameObject:
   - component: {fileID: 317891249178017246}
   - component: {fileID: 317891249178017245}
   m_Layer: 0
-  m_Name: Pixel (4)
+  m_Name: PreviousPixel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4937,7 +4937,7 @@ MonoBehaviour:
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 1
+  isTrap: 0
 --- !u!1 &317891249480196304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,7 +5086,7 @@ MonoBehaviour:
   lineX: {fileID: 629298566601130798, guid: 43e0724152eb02d4d90efdd00cbf3c6a, type: 3}
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
-  endButton: 1
+  endButton: 0
   strongButton: 0
   isTrap: 0
 --- !u!1 &317891249749979064
@@ -5310,7 +5310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6a813c1e1283949b4edb548304db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PreviousPixelObject: {fileID: 317891249941342925}
+  PreviousPixelObject: {fileID: 317891249178017219}
   PreviousPixel: {fileID: 0}
 --- !u!1 &317891249883844201
 GameObject:
@@ -5572,7 +5572,7 @@ GameObject:
   - component: {fileID: 317891249941342920}
   - component: {fileID: 317891249941342927}
   m_Layer: 0
-  m_Name: PreviousPixel
+  m_Name: Pixel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5956,7 +5956,7 @@ MonoBehaviour:
   clicked: 0
   endButton: 0
   strongButton: 0
-  isTrap: 0
+  isTrap: 1
 --- !u!1 &317891250142020353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6202,8 +6202,8 @@ MonoBehaviour:
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 1
-  isTrap: 0
+  strongButton: 0
+  isTrap: 1
 --- !u!1 &317891250273671062
 GameObject:
   m_ObjectHideFlags: 0
@@ -6449,7 +6449,7 @@ MonoBehaviour:
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 0
+  strongButton: 1
   isTrap: 0
 --- !u!1 &317891250295954704
 GameObject:
@@ -6600,7 +6600,7 @@ MonoBehaviour:
   lineY: {fileID: 1685358576268397152, guid: 26bfc72c096b3604f8fe25c0d36b459f, type: 3}
   clicked: 0
   endButton: 0
-  strongButton: 1
+  strongButton: 0
   isTrap: 0
 --- !u!1 &317891250301698670
 GameObject:

@@ -105,7 +105,7 @@ public class TalkManager : MonoBehaviour
             n = 3;
         else if (nameData == "큐브")
             n = 4;
-        else if (nameData == "찢어진 인형")
+        else if (nameData == "찢어진 인형"|| nameData == "애너벨")
             n = 5;
         sprites[n].SetActive(true);
 
