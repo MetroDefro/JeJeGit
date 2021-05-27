@@ -160,7 +160,7 @@ public class TalkStorage : MonoBehaviour
 
         // 도중
         talkData.Add(1001, new string[] {
-            "찢어진 인형", "고장", "흑흑흑 아파."
+            "소녀 인형", "고장", "흑흑흑 아파."
         });
 
         // 고친 후
