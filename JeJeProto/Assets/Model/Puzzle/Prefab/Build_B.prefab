@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3741376239490090582}
   - component: {fileID: 1648705603338837845}
   - component: {fileID: -1200857176693342602}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Build_B
   m_TagString: SBlock
   m_Icon: {fileID: 0}

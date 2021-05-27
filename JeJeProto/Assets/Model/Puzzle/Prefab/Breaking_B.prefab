@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7598944418936255075}
   - component: {fileID: 1959100981404948563}
   - component: {fileID: 6168175784177601271}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Breaking_B
   m_TagString: BBlock
   m_Icon: {fileID: 0}

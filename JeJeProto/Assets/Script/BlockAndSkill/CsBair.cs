@@ -102,7 +102,7 @@ public class CsBair : MonoBehaviour
 
         if (Vector3.Distance(player.transform.position, transform.position) > 0.8f)
         {
-            transform.position = new Vector3(player.transform.position.x - 0.2f, player.transform.position.y, player.transform.position.z);
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         }
 
 

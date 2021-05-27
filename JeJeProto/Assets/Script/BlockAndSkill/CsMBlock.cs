@@ -79,7 +79,7 @@ public class CsMBlock : MonoBehaviour
 
         RaycastHit hit;
         // int lM = 1 << LayerMask.NameToLayer("Block"); 블럭 레이어 제외하고
-        /*
+        
         if (Physics.Raycast(transform.position, direction, out hit, 0.256f))
             Debug.Log("있음");
         else
@@ -89,7 +89,7 @@ public class CsMBlock : MonoBehaviour
             //rigidbody.MovePosition(newPos);
             target = newPos;
         }
-        */
+        
 
 
         /*
@@ -140,7 +140,7 @@ public class CsMBlock : MonoBehaviour
 
         RaycastHit hit;
         // int lM = 1 << LayerMask.NameToLayer("Block"); 블럭 레이어 제외하고
-        /*
+        
         if (Physics.Raycast(transform.position, direction, out hit, 0.256f))
             Debug.Log("있음");
         else
@@ -150,7 +150,7 @@ public class CsMBlock : MonoBehaviour
             //rigidbody.MovePosition(newPos);
             target = newPos;
         }
-        */
+        
 
 
         /*

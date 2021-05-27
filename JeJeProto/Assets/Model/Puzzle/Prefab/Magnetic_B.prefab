@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6097517614551056682}
   - component: {fileID: 1539162511029738322}
   - component: {fileID: 637172572011228885}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Magnetic_B
   m_TagString: MBlock
   m_Icon: {fileID: 0}

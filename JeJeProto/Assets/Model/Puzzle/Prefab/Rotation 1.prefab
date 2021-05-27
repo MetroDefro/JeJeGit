@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2751681471978371327}
   - component: {fileID: 1914176345029352224}
   - component: {fileID: 2553797697493158999}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Rotation 1
   m_TagString: RBlock
   m_Icon: {fileID: 0}

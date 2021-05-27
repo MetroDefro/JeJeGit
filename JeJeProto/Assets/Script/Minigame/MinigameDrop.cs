@@ -40,6 +40,7 @@ public class MinigameDrop : MonoBehaviour
 
             if (target == null)
             {
+                MinigameManager.instance.Parts = null;
                 return;
             }
             //선택된게 맞는장소면
@@ -63,6 +64,8 @@ public class MinigameDrop : MonoBehaviour
                 target.GetComponent<MinigamePlace>().In = true;
                 if (target.GetComponent<MinigamePlace>().PN == Parts.GetComponent<MinigameParts>().num)
                     target.GetComponent<MinigamePlace>().End = true;
+
+                MinigameManager.instance.Parts = null;
             }
         }
     }

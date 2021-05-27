@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1673966271917991438}
   - component: {fileID: 6994433055117576455}
   - component: {fileID: 7367880436101231626}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Baes_1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3d2bf9499817fd4449f8da08da552e9e, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

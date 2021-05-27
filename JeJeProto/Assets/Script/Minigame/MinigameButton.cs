@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class MinigameButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-
     public GameObject Parts;
     public GameObject PartsUI;
     // Start is called before the first frame update
@@ -22,6 +21,7 @@ public class MinigameButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        MinigameManager.instance.Parts = null;
         MinigameManager.instance.Parts = Parts;
         PartsUI.SetActive(true);
     }
