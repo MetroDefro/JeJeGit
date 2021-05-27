@@ -53,6 +53,7 @@ public class CsBair : MonoBehaviour
                 Go();
                 isGo = true;
                 animator.SetBool("Go", true);
+                StartCoroutine(Timer());
             }
         }
     }
@@ -124,5 +125,12 @@ public class CsBair : MonoBehaviour
 
         }
         return target;
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(5f);
+        animator.SetBool("Go", false);
+        isGo = false;
     }
 }
