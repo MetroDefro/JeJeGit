@@ -60,6 +60,7 @@ public class CsPlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+
         //대화 상태에서는 움직이지 않음
         if (TalkManager.instance.isTalking)
         {
@@ -68,9 +69,19 @@ public class CsPlayerController : MonoBehaviour
         }
         playerAnimator.SetBool("Talking", false);
 
-        Rotate();
+        //Rotate();
+
+        if (playerInput.move + playerInput.rotate != 0)
+        {
+            playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
+        }
+
+        playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
+
         Move();
-        
+
+
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -86,25 +97,35 @@ public class CsPlayerController : MonoBehaviour
     //이동관련
     private void Move()
     {
-        playerAnimator.SetFloat("Walk", playerInput.move);
+        playerAnimator.SetFloat("Walk", playerInput.move + playerInput.rotate);
 
-        Vector3 moveDistance = playerInput.move * transform.forward * moveSpeed * Time.deltaTime;
+        Vector3 moveDistanceF;
+        Vector3 moveDistanceR;
+
+        //moveDistance = new Vector3(0, 0, playerInput.move * -1);
+        moveDistanceF = playerInput.move * transform.forward * moveSpeed * Time.deltaTime;
+        //moveDistance = new Vector3(playerInput.rotate, 0, 0);
+        moveDistanceR = playerInput.rotate * -1 * transform.right * moveSpeed * Time.deltaTime;
+
         //대쉬중인가?
         if (playerInput.dash)
         {
-            playerRigidbody.MovePosition(playerRigidbody.position + moveDistance * 1.5f);
+            playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF * 1.5f);
+            playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR * 1.5f);
             playerAnimator.SetBool("Dash", true);
             if (playerInput.move != 0)
                 SoundManager.instance.RunSound();
             return;
         }
         playerAnimator.SetBool("Dash", false);
-        playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
-        if(playerInput.move != 0)
+        playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF);
+        playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR);
+        if (playerInput.move != 0)
             SoundManager.instance.WalkSound();
         else
             SoundManager.instance.WalkSoundStop();
     }
+    /*
     private void Rotate()
     {
         playerAnimator.SetFloat("Walk", playerInput.rotate);
@@ -114,6 +135,7 @@ public class CsPlayerController : MonoBehaviour
         playerRigidbody.rotation = playerRigidbody.rotation * Quaternion.Euler(0, turn, 0f);
         followTarget.transform.rotation = followTarget.transform.rotation * Quaternion.Euler(0, -turn, 0f);
     }
+    */
     private void Jump()
     {
         //플레이어 인풋에서 점프 받아옴, 점프중이 아닐 때

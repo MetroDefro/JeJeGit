@@ -2567,6 +2567,7 @@ MonoBehaviour:
   SoilP: {fileID: 0}
   puzzle: {fileID: 0}
   foot: {fileID: 0}
+  followTarget: {fileID: 0}
 --- !u!114 &2493354048351966938
 MonoBehaviour:
   m_ObjectHideFlags: 0
