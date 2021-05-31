@@ -71,7 +71,7 @@ public class CsPlayerController : MonoBehaviour
 
         //Rotate();
 
-        if (playerInput.move + playerInput.rotate != 0)
+        if ((playerInput.move != 0) || (playerInput.rotate != 0))
         {
             playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
         }
@@ -97,7 +97,7 @@ public class CsPlayerController : MonoBehaviour
     //이동관련
     private void Move()
     {
-        playerAnimator.SetFloat("Walk", playerInput.move + playerInput.rotate);
+        playerAnimator.SetBool("Walk", (playerInput.move != 0) || (playerInput.rotate != 0 ));
 
         Vector3 moveDistanceF;
         Vector3 moveDistanceR;
