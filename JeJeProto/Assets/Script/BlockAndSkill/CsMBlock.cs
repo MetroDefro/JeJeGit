@@ -7,9 +7,10 @@ public class CsMBlock : MonoBehaviour
     private GameObject player;
     private Rigidbody rigidbody;
     //private bool bad = false;
-    private bool moving;
+    public bool moving;
 
     private Vector3 target;
+    private Vector3 firstPos;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,18 @@ public class CsMBlock : MonoBehaviour
     void FixedUpdate()
     {
         if (moving == false)
+        {
+            transform.position = new Vector3(target.x, transform.position.y, target.z);
             return;
+        }
 
-        rigidbody.MovePosition(Vector3.MoveTowards(transform.position, target, 1 * Time.deltaTime));
+        rigidbody.MovePosition(Vector3.MoveTowards(transform.position, target, 2 * Time.deltaTime));
         if (Vector3.Distance(target, transform.position) < 0.01f)
+        {
+            transform.position = new Vector3(target.x, transform.position.y, target.z);
+            target = transform.position;
             moving = false;
+        }
             //= Vector3.MoveTowards(transform.position, target, 5 * Time.deltaTime);
     }
     //변환
@@ -77,20 +85,13 @@ public class CsMBlock : MonoBehaviour
 
         direction.y = 0;
 
-        RaycastHit hit;
-        // int lM = 1 << LayerMask.NameToLayer("Block"); 블럭 레이어 제외하고
-        
-        if (Physics.Raycast(transform.position, direction, out hit, 0.256f))
-            Debug.Log("있음");
-        else
-        {
-            Vector3 newPos = direction * 0.256f + rigidbody.position;
+        Vector3 newPos = direction * 0.256f + rigidbody.position;
 
-            //rigidbody.MovePosition(newPos);
-            target = newPos;
-        }
-        
+        //rigidbody.MovePosition(newPos);
+        firstPos = target;
+        target = newPos;
 
+        StartCoroutine(Timer());
 
         /*
         Vector3 Bp = transform.position;
@@ -138,20 +139,13 @@ public class CsMBlock : MonoBehaviour
 
         direction.y = 0;
 
-        RaycastHit hit;
-        // int lM = 1 << LayerMask.NameToLayer("Block"); 블럭 레이어 제외하고
-        
-        if (Physics.Raycast(transform.position, direction, out hit, 0.256f))
-            Debug.Log("있음");
-        else
-        {
-            Vector3 newPos = direction * 0.256f + rigidbody.position;
+        Vector3 newPos = direction * -0.256f + rigidbody.position;
 
-            //rigidbody.MovePosition(newPos);
-            target = newPos;
-        }
-        
+        //rigidbody.MovePosition(newPos);
+        firstPos = target;
+        target = newPos;
 
+        StartCoroutine(Timer());
 
         /*
         Vector3 Bp = transform.position;
@@ -163,13 +157,15 @@ public class CsMBlock : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator Timer()
     {
-        /*
-        if (collision.collider.CompareTag("BBlock"))
-            bad = true;
-        */
-        //rigidbody.isKinematic = true;
+        yield return new WaitForSeconds(0.5f);
+        if((transform.position.x != target.x) && (transform.position.z != target.z))
+        {
+            transform.position = new Vector3(firstPos.x, transform.position.y, firstPos.z);
+            target = transform.position;
+            moving = false;
+        }
     }
 
 

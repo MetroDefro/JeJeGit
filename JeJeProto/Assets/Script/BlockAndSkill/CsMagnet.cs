@@ -111,4 +111,6 @@ public class CsMagnet: MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, 5 * Time.deltaTime));
 
     }
+
+
 }

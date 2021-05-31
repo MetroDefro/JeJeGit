@@ -94,7 +94,7 @@ public class CsBair : MonoBehaviour
     private void Move()
     {
         transform.LookAt(player.transform);
-        if (Vector3.Distance(player.transform.position, transform.position) < 0.2f)
+        if (Vector3.Distance(player.transform.position, transform.position) < 0.25f)
         {
             animator.SetBool("Walk", false);
             return;
@@ -102,9 +102,8 @@ public class CsBair : MonoBehaviour
 
         if (Vector3.Distance(player.transform.position, transform.position) > 0.8f)
         {
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 0.1f);
         }
-
 
         animator.SetBool("Walk", true);
         GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(transform.position, player.transform.position, 1f * Time.deltaTime));

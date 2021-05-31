@@ -11,6 +11,7 @@ public class CsObject : MonoBehaviour
 
     public bool noToken;
     public bool isPet;
+    private bool first;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +21,7 @@ public class CsObject : MonoBehaviour
     }
     void Start()
     {
+        first = false;
     }
 
     // Update is called once per frame
@@ -42,9 +44,10 @@ public class CsObject : MonoBehaviour
         
 
 
-        if(!(nowId == 0))
+        if((id != 0) && !first)
             TalkManager.instance.Talk(nowId);
 
+        first = true;
         if (noToken)
             return;
         DropToken();
