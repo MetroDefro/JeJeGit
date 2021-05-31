@@ -13,7 +13,7 @@ public class CsTalkArea : MonoBehaviour
 
     public bool goal;
 
-    private bool inPlayer;
+    public bool inPlayer;
 
     void Awake()
     {

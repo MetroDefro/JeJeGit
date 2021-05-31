@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CsPlayerController : MonoBehaviour
 {
+    //플레이어 모델
+    private GameObject PlayerModel;
     //리지드바디
     private Rigidbody playerRigidbody;
     //인풋
@@ -12,6 +14,7 @@ public class CsPlayerController : MonoBehaviour
     private Animator playerAnimator;
 
     //속도, 회전, 점프 크기
+    private Vector3 movement;
     public float moveSpeed;
     public float rotateSpeed;
     public float jumpForce;
@@ -36,9 +39,10 @@ public class CsPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerModel = GameObject.Find("PlayerModel");
         playerRigidbody = GetComponent<Rigidbody>();
         playerInput = GetComponent<CsPlayerInput>();
-        playerAnimator = GetComponent<Animator>();
+        playerAnimator = PlayerModel.transform.GetComponent<Animator>();
 
         puzzle = null;
     }
@@ -69,14 +73,13 @@ public class CsPlayerController : MonoBehaviour
         }
         playerAnimator.SetBool("Talking", false);
 
-        //Rotate();
 
         if ((playerInput.move != 0) || (playerInput.rotate != 0))
         {
-            playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
+            transform.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y, 0);
+            Rotate();
         }
-
-        playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
+        
 
         Move();
 
@@ -99,6 +102,11 @@ public class CsPlayerController : MonoBehaviour
     {
         playerAnimator.SetBool("Walk", (playerInput.move != 0) || (playerInput.rotate != 0 ));
 
+        movement.Set(playerInput.rotate, 0, playerInput.move * -1);
+        movement = transform.TransformDirection(movement);
+        movement = movement.normalized * moveSpeed * Time.deltaTime;
+
+        /*
         Vector3 moveDistanceF;
         Vector3 moveDistanceR;
 
@@ -107,35 +115,50 @@ public class CsPlayerController : MonoBehaviour
         //moveDistance = new Vector3(playerInput.rotate, 0, 0);
         moveDistanceR = playerInput.rotate * -1 * transform.right * moveSpeed * Time.deltaTime;
 
+        */
+
         //대쉬중인가?
         if (playerInput.dash)
         {
+            /*
             playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF * 1.5f);
             playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR * 1.5f);
+            */
+
+            playerRigidbody.MovePosition(playerRigidbody.position + movement * 1.5f);
+
             playerAnimator.SetBool("Dash", true);
             if (playerInput.move != 0)
                 SoundManager.instance.RunSound();
             return;
         }
         playerAnimator.SetBool("Dash", false);
+        /*
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF);
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR);
+        */
+
+        playerRigidbody.MovePosition(playerRigidbody.position + movement);
+
         if (playerInput.move != 0)
             SoundManager.instance.WalkSound();
         else
             SoundManager.instance.WalkSoundStop();
     }
-    /*
+    
     private void Rotate()
     {
-        playerAnimator.SetFloat("Walk", playerInput.rotate);
+        //playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
 
-        float turn = playerInput.rotate * rotateSpeed * Time.deltaTime;
+        if (movement != Vector3.zero)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(movement);
+            PlayerModel.transform.rotation = Quaternion.Euler(0, newRotation.eulerAngles.y, 0);
+        }
 
-        playerRigidbody.rotation = playerRigidbody.rotation * Quaternion.Euler(0, turn, 0f);
-        followTarget.transform.rotation = followTarget.transform.rotation * Quaternion.Euler(0, -turn, 0f);
+
     }
-    */
+    
     private void Jump()
     {
         //플레이어 인풋에서 점프 받아옴, 점프중이 아닐 때
