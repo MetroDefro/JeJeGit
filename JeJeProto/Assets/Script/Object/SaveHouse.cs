@@ -33,7 +33,6 @@ public class SaveHouse : MonoBehaviour
     private void Save()
     {
         GameManager.instance.SaveGame();
-        
     }
 
 

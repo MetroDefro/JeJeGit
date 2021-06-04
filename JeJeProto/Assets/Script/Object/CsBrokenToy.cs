@@ -6,6 +6,8 @@ public class CsBrokenToy : MonoBehaviour
 {
     private GameObject player;
     public GameObject toy;
+    public GameObject brokenToy;
+    public GameObject happyToy;
 
     private Animator animator;
 
@@ -22,6 +24,7 @@ public class CsBrokenToy : MonoBehaviour
     public int endAmound;
     public int RimitT;
 
+
     //고친 장난감 이미지
     //public GameObject fixedToy;
 
@@ -34,7 +37,7 @@ public class CsBrokenToy : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
+        animator = brokenToy.GetComponent<Animator>();
         nowId = id;
         fix = false;
     }
@@ -57,7 +60,6 @@ public class CsBrokenToy : MonoBehaviour
             Destroy(gameObject);
         */
     }
-
 
     //상호작용
     private void Inter()
@@ -142,9 +144,10 @@ public class CsBrokenToy : MonoBehaviour
 
         GameManager.instance.isFixed = true;
 
+        happyToy.SetActive(true);
+        brokenToy.SetActive(false);
+
         fix = true;
-
-
     }
 
     private void Talking()
@@ -158,7 +161,7 @@ public class CsBrokenToy : MonoBehaviour
         {
             if (id != 0)
                 TalkManager.instance.Talk(nowId);
-        }          
+        }
     }
 
     // 장난감은 3단계로 이루어짐. 구분하는 것은 toy.액티브와 fix bool임.

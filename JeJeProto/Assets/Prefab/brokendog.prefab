@@ -374,7 +374,7 @@ Animator:
   m_GameObject: {fileID: 2702967213912874132}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d6386b1733311c5439d0a4e6d66988d6, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0582baddfd0436b4ba2e0fc903223d3f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -396,7 +396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 0}
-  id: 0
+  happyToy: {fileID: 0}
+  id: 1003
   nowId: 0
   MG1: {fileID: 7838568774973608213, guid: dcde4a94deb5d4648b69570aed06571b, type: 3}
   MG2: {fileID: 317891250556471112, guid: f7fbbcd24fc01a446a0750b12eecbb6c, type: 3}
@@ -404,9 +405,10 @@ MonoBehaviour:
   Bnum: 8
   pointAmount: 4
   endAmound: 2
-  parts: 010000000200000000000000000000000000000000000000
+  RimitT: 21
+  parts: 000000000200000000000000000000000000000000000000
   Magic: {fileID: 100004, guid: 87845abcf6b5d554abcfa2bd26d5728c, type: 3}
-  MagicT: {fileID: 0}
+  MagicT: {fileID: 1522144621}
 --- !u!1 &3403552880292566613
 GameObject:
   m_ObjectHideFlags: 0
