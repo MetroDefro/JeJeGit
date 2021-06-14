@@ -5,6 +5,9 @@ using UnityEngine;
 public class CsLift : MonoBehaviour
 {
     public GameObject lift;
+
+    // 만약 버튼도 같이 올라가야 하는 구조면
+    public bool same;
     // 올라갈 칸 수
     public int level;
     private double term;
@@ -25,9 +28,9 @@ public class CsLift : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "MBlock" || collision.gameObject.tag == "SBlock")
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "MBlock" || collider.gameObject.tag == "SBlock")
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 0.4f);
             SoundManager.instance.ButtonSound();
@@ -36,9 +39,9 @@ public class CsLift : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "MBlock" || collision.gameObject.tag == "SBlock")
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "MBlock" || collider.gameObject.tag == "SBlock")
         {
             term = level / 0.1;
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1f);
@@ -48,12 +51,15 @@ public class CsLift : MonoBehaviour
 
     IEnumerator ConversionDelay()
     {
+        yield return new WaitForSeconds(0.1f);
         if (term > 0)
         {
             for (int i = 0; i < term; i++)
             {
                 lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
-                yield return new WaitForSeconds(0.01f);
+                if (same)
+                    transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
         else
@@ -61,18 +67,23 @@ public class CsLift : MonoBehaviour
             for (int i = 0; i > term; i--)
             {
                 lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
-                yield return new WaitForSeconds(0.01f);
+                if (same)
+                    transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
+                yield return new WaitForSeconds(0.02f);
             }
         }
     }
 
     IEnumerator ConversionReturnDelay()
     {
+        yield return new WaitForSeconds(0.1f);
         if (term > 0)
         {
             for (int i = 0; i > -term; i--)
             {
                 lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
+                if(same)
+                    transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
                 yield return new WaitForSeconds(0.02f);
             }
         }
@@ -81,6 +92,8 @@ public class CsLift : MonoBehaviour
             for (int i = 0; i < -term; i++)
             {
                 lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
+                if (same)
+                    transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
                 yield return new WaitForSeconds(0.02f);
             }
         }
