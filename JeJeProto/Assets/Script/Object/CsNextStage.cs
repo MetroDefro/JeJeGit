@@ -31,6 +31,6 @@ public class CsNextStage : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) > 0.5)
             return;
 
-        SceneManager.LoadScene("stage2_puzzle2");
+        SceneManager.LoadScene("New Stage2");
     }
 }

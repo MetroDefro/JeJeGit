@@ -5,22 +5,20 @@ using UnityEngine.UI;
 
 public class CsUI : MonoBehaviour
 {
-    private Image spriteImage;
+    //private Image spriteImage;
 
     public GameObject book;
 
     private CsPlayerController player;
 
-    public GameObject hintNote;
     //힌트 이미지 교체하는 코드인데 프로토에서는 상관 없을 듯
 
-    public Text warning;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<CsPlayerController>();
-        spriteImage = hintNote.GetComponent<Image>();
+        //spriteImage = hintNote.GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -37,6 +35,7 @@ public class CsUI : MonoBehaviour
             book.SetActive(false);
     }
 
+    /*
     public void UseHint()
     {
         SoundManager.instance.ClickSound();
@@ -81,10 +80,13 @@ public class CsUI : MonoBehaviour
         //힌트 보여주면 그 힌트는 true가 됨.
         player.puzzle.gameObject.GetComponent<CsPuzzle>().hint = true;
     }
+    */
 
+    /*
     IEnumerator WaitForIt()
     {
         yield return new WaitForSeconds(0.5f);
         warning.text = null;
     }
+    */
 }

@@ -52,7 +52,7 @@ public class CsLift : MonoBehaviour
         {
             for (int i = 0; i < term; i++)
             {
-                lift.transform.transform.Translate(Vector3.up * 0.256f * 0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -60,7 +60,7 @@ public class CsLift : MonoBehaviour
         {
             for (int i = 0; i > term; i--)
             {
-                lift.transform.transform.Translate(Vector3.up * 0.256f * -0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -72,7 +72,7 @@ public class CsLift : MonoBehaviour
         {
             for (int i = 0; i > -term; i--)
             {
-                lift.transform.transform.Translate(Vector3.up * 0.256f * -0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
                 yield return new WaitForSeconds(0.02f);
             }
         }
@@ -80,7 +80,7 @@ public class CsLift : MonoBehaviour
         {
             for (int i = 0; i < -term; i++)
             {
-                lift.transform.transform.Translate(Vector3.up * 0.256f * 0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
                 yield return new WaitForSeconds(0.02f);
             }
         }

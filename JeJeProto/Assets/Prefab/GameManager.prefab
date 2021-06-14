@@ -53,7 +53,7 @@ MonoBehaviour:
   isGameOver: 0
   isLoading: 0
   canvasUI: {fileID: 0}
-  pet: 3
+  pet: 0
   book: {fileID: 0}
   bear: {fileID: 0}
   stack: {fileID: 0}
@@ -110,7 +110,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
 --- !u!81 &3962212102680533673
 AudioListener:
   m_ObjectHideFlags: 0
@@ -129,7 +128,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 14f45e265ae0c5a409e7ada46b8aabc1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7da470dc2fbc568468693248ee6987df, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
