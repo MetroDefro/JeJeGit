@@ -159,7 +159,7 @@ public class CsMBlock : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         if((transform.position.x != target.x) && (transform.position.z != target.z))
         {
             transform.position = new Vector3(firstPos.x, transform.position.y, firstPos.z);
