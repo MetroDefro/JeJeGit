@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title.unity
     guid: ca285b46308b6b24687961c8f68247b9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro.unity
     guid: 79838a904f9b38c4aa9e6bd35dbc6772
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage1.unity
     guid: 73a05808c5385984099a8bf4623ae8ac
   - enabled: 0
@@ -26,7 +26,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/stage2_puzzle2.unity
     guid: 664baf1d5e60e7646af6fe3ec3d0ffad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/New Stage2.unity
     guid: b6ad1fcec7bdb7049850f32ba2a897d0
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

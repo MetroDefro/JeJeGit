@@ -38,6 +38,9 @@ public class MinigameManager : MonoBehaviour
     public int rimitC;
     private float rimitT;
 
+    public GameObject ClearIMG;
+    public GameObject FailIMG;
+
     void Awake()
     {
         if (instance == null)
@@ -117,8 +120,8 @@ public class MinigameManager : MonoBehaviour
             
             if (rimitT <= 0 && !isMini2)
             {
-                CameraManager.instance.MainCameraOn();
-                Reset();
+                //게임오버
+                StartCoroutine(Clear(false));
             }
             
         }
@@ -126,10 +129,10 @@ public class MinigameManager : MonoBehaviour
         if (countT != null)
         {
             countT.text = "제한 칸수: " + rimitC + "칸";
-            if(rimitC == 0)
+            if(rimitC == -1)
             {
-                CameraManager.instance.MainCameraOn();
-                Reset();
+                //게임오버
+                StartCoroutine(Clear(false));
             }
                 
         }
@@ -174,27 +177,46 @@ public class MinigameManager : MonoBehaviour
         }
 
         // end 다 채웠나?
-        Debug.Log(ends);
         if (endAmount != ends)
             return;
         //먼저 목표 수만큼 실이 있는지 확인
         if (maxC == sum)
             if (pointAmount == point)
             {
-                SoundManager.instance.MinigameClearSound();
-                Toy.GetComponent<CsBrokenToy>().Fixed();
+                //클리어
+                StartCoroutine(Clear(true));
             }
             else
             {
-                SoundManager.instance.MinigameFailSound();
-                CameraManager.instance.MainCameraOn();
+                //게임오버
+                StartCoroutine(Clear(false));
             }             
         else
         {
-            SoundManager.instance.MinigameFailSound();
-            CameraManager.instance.MainCameraOn();
+            //게임오버
+            StartCoroutine(Clear(false));
         }
+    }
 
-        Reset();
+    IEnumerator Clear(bool isClear)
+    {
+        Vector3 pos = new Vector3(CameraManager.instance.subC.transform.position.x, 25, 0);
+        Transform Par = GameObject.Find("Parent").transform;
+        if (isClear)
+        {
+            SoundManager.instance.MinigameClearSound();
+            Instantiate(ClearIMG, pos, ClearIMG.transform.rotation).transform.parent = Par;
+            yield return new WaitForSeconds(2f);
+            Toy.GetComponent<CsBrokenToy>().Fixed();
+            Reset();
+        }
+        else
+        {
+            SoundManager.instance.MinigameFailSound();
+            Instantiate(FailIMG, pos, FailIMG.transform.rotation).transform.parent = Par;
+            yield return new WaitForSeconds(2f);
+            CameraManager.instance.MainCameraOn();
+            Reset();
+        }
     }
 }

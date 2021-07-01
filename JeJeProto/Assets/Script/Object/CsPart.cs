@@ -13,12 +13,12 @@ public class CsPart : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (GameManager.instance.inter)
             Inter();
     }

@@ -9,11 +9,11 @@ public class CsDoor : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class CsDoor : MonoBehaviour
     {
         if (GameManager.instance.inter)
             Inter();
+
     }
 
     //상호작용

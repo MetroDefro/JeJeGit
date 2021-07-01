@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
     public GameObject magnet;
     public GameObject cube;
 
+    //E키 UI
+    public GameObject Ekey;
+
+    //E키 사용하는 모든 것
+    public GameObject[] EUse;
+
     //스킬판 돌아가는것
     public GameObject skillImg;
     //각도
@@ -76,7 +82,6 @@ public class GameManager : MonoBehaviour
         talkArea = GameObject.FindGameObjectsWithTag("TalkArea");
         toy = GameObject.FindGameObjectsWithTag("Toy");
         partsActive = new bool[partsBoxes.Length];
-
     }
 
     // Start is called before the first frame update
@@ -106,7 +111,18 @@ public class GameManager : MonoBehaviour
         //UI 교체
         SetUi();
 
+        Ekey.SetActive(false);
+
+        for (int i = 0; i < EUse.Length; i++)
+        {
+            if(EUse[i].activeSelf)
+                if (Vector3.Distance(player.transform.position, EUse[i].transform.position) <= 0.5)
+                    Ekey.SetActive(true);
+        }
+
         Talking();
+
+
     }
 
     private void SetSkillUi()
@@ -147,6 +163,9 @@ public class GameManager : MonoBehaviour
         if ((skillImg.transform.eulerAngles.z < skillRoZ + 0.5) && (skillImg.transform.eulerAngles.z > skillRoZ - 0.5))
             return;
         skillImg.transform.Rotate(new Vector3(0, 0, 10f));
+       
+
+
     }
 
     //스킬1
