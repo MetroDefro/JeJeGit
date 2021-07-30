@@ -106,7 +106,12 @@ public class CsBrokenToy : MonoBehaviour
         //고칠 수 있는지 확인부터
         //못고쳤다면 리턴
         if (GameManager.instance.SeePart() <= 0)
+        {
+            nowId = id + 1;
+            if (id != 0)
+                TalkManager.instance.Talk(nowId);
             return;
+        }
 
         MinigameManager.instance.Toy = this.gameObject;
         CameraManager.instance.SubCameraOn();
