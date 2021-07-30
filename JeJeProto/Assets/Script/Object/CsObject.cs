@@ -9,7 +9,6 @@ public class CsObject : MonoBehaviour
     public int id;
     public int nowId;
 
-    public bool noToken;
     public bool isPet;
     private bool first;
 
@@ -48,18 +47,7 @@ public class CsObject : MonoBehaviour
             TalkManager.instance.Talk(nowId);
 
         first = true;
-        if (noToken)
-            return;
-        DropToken();
-    }
 
-    private void DropToken()
-    {
-
-        //얻기
-        GameManager.instance.token += 1;
-        SoundManager.instance.CoinSound();
-        noToken = true;
     }
 
     private void Talking()
@@ -92,13 +80,11 @@ public class CsObject : MonoBehaviour
 
     public void SaveObject(int i)
     {
-        PlayerPrefsX.SetBool("noToken" + i, noToken);
         PlayerPrefsX.SetBool("objtAct" + i, gameObject.activeSelf);
     }
 
     public void LoadObject(int i)
     {
-        noToken = PlayerPrefsX.GetBool("noToken" + i);
         gameObject.SetActive(PlayerPrefsX.GetBool("objtAct" + i));
     }
 

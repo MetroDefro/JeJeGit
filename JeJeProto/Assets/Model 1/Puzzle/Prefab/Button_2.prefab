@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7384198201167018598}
   - component: {fileID: -4572540371393717750}
   - component: {fileID: -6549324854955353279}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Button_2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -109,4 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lift: {fileID: 0}
+  same: 0
   level: 0

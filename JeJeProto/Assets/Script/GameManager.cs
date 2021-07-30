@@ -50,13 +50,7 @@ public class GameManager : MonoBehaviour
     public int skill;
     public bool inter { get; private set; }
 
-    //부품 개수 UI
-    public Text[] partsText;
-    private int[] parts = { 0, 0, 0, 0, 0, 0 };
-
-    //돈 UI
-    public Text tokenText;
-    public int token;
+    private int parts;
 
     //장난감
     public bool isFixed { get; set; }
@@ -224,28 +218,23 @@ public class GameManager : MonoBehaviour
     }
 
     //부품 획득
-    public void GetPart(int n, int m)
+    public void GetPart()
     {
-        parts[n]+= m;
+        parts++;
     }
     //부품 몇 개인지 확인
-    public int SeePart(int n)
+    public int SeePart()
     {
-        return parts[n];
+        return parts;
     }
-    public void MinusPart(int n, int m)
+    public void MinusPart()
     {
-        parts[n] -= m;
+        parts--;
     }
     //부품 UI
     private void SetUi()
     {
-        //부품
-        for(int i = 0; i < parts.Length; i++)
-            partsText[i].text = "x" + parts[i];
 
-        //돈
-        tokenText.text = " " + token + " Glod";
     }
 
     public void SaveGame()
@@ -253,8 +242,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefsX.SetVector3("player", player.transform.position);
         for (int i = 0; i < objects.Length; i++)
             objects[i].GetComponent<CsObject>().SaveObject(i);
-        PlayerPrefs.SetInt("token", token);
-        PlayerPrefsX.SetIntArray("parts", parts);
+        PlayerPrefs.SetInt("parts", parts);
         // 그리고 파츠 활성화된상태인지 비활성화된 상태인지도 조사해서
         for (int i = 0; i<partsBoxes.Length; i++)
             partsActive[i] = partsBoxes[i].activeSelf;
@@ -304,8 +292,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = PlayerPrefsX.GetVector3("player");
         for (int i = 0; i < objects.Length; i++)
             objects[i].GetComponent<CsObject>().LoadObject(i);
-        token = PlayerPrefs.GetInt("token");
-        parts = PlayerPrefsX.GetIntArray("parts");
+        parts = PlayerPrefs.GetInt("parts");
 
         for (int i = 0; i < partsBoxes.Length; i++)
             partsBoxes[i].SetActive(partsActive[i]);

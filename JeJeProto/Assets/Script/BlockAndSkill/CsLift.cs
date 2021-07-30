@@ -54,22 +54,22 @@ public class CsLift : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (term > 0)
         {
-            for (int i = 0; i < term; i++)
+            for (int i = 0; i < term*2; i++)
             {
-                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.05f);
                 if (same)
-                    transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
-                yield return new WaitForSeconds(0.02f);
+                    transform.transform.Translate(Vector3.forward * 0.256f * 0.05f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
         else
         {
-            for (int i = 0; i > term; i--)
+            for (int i = 0; i > term*2; i--)
             {
-                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.05f);
                 if (same)
-                    transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
-                yield return new WaitForSeconds(0.02f);
+                    transform.transform.Translate(Vector3.forward * 0.256f * -0.05f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
     }
@@ -79,22 +79,22 @@ public class CsLift : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (term > 0)
         {
-            for (int i = 0; i > -term; i--)
+            for (int i = 0; i > -term*2; i--)
             {
-                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * -0.05f);
                 if(same)
-                    transform.transform.Translate(Vector3.forward * 0.256f * -0.1f);
-                yield return new WaitForSeconds(0.02f);
+                    transform.transform.Translate(Vector3.forward * 0.256f * -0.05f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
         else
         {
-            for (int i = 0; i < -term; i++)
+            for (int i = 0; i < -term*2; i++)
             {
-                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
+                lift.transform.transform.Translate(Vector3.forward * 0.256f * 0.05f);
                 if (same)
-                    transform.transform.Translate(Vector3.forward * 0.256f * 0.1f);
-                yield return new WaitForSeconds(0.02f);
+                    transform.transform.Translate(Vector3.forward * 0.256f * 0.05f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
     }

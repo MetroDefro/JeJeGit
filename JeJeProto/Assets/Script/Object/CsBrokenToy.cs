@@ -28,8 +28,6 @@ public class CsBrokenToy : MonoBehaviour
     //고친 장난감 이미지
     //public GameObject fixedToy;
 
-    public int[] parts = { 0, 0, 0, 0, 0, 0 };
-
     // 파티클
     public GameObject Magic;
     public GameObject MagicT;
@@ -107,11 +105,8 @@ public class CsBrokenToy : MonoBehaviour
     {
         //고칠 수 있는지 확인부터
         //못고쳤다면 리턴
-        for(int i = 0; i<parts.Length; i++)
-        {
-            if (GameManager.instance.SeePart(i) < parts[i])
-                return;
-        }
+        if (GameManager.instance.SeePart() <= 0)
+            return;
 
         MinigameManager.instance.Toy = this.gameObject;
         CameraManager.instance.SubCameraOn();
@@ -134,13 +129,10 @@ public class CsBrokenToy : MonoBehaviour
         if (id != 0)
             TalkManager.instance.Talk(nowId);
 
-        for (int i = 0; i < parts.Length; i++)
-        {
-            GameManager.instance.MinusPart(i, parts[i]);
-        }
+        GameManager.instance.MinusPart();
+        
 
         animator.SetBool("Fix", true);
-        GameManager.instance.token += 30;
 
         GameManager.instance.isFixed = true;
 
