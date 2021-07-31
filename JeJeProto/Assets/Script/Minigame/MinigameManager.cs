@@ -62,8 +62,8 @@ public class MinigameManager : MonoBehaviour
 
     public void StartGame(GameObject M1, GameObject M2, int PA, int EA, int MC, int BN, int RT)
     {
-        Vector3 pos1 = new Vector3(10, 11, 0);
-        Vector3 pos2 = new Vector3(10, 11, 0);
+        Vector3 pos1 = new Vector3(50, 11, 0);
+        Vector3 pos2 = new Vector3(70, 11, 0);
         MG1 = M1;
         MG2 = M2;
         pointAmount = PA;
@@ -71,8 +71,8 @@ public class MinigameManager : MonoBehaviour
         maxC = MC;
         bNum = BN;
 
-        MMG1 = Instantiate(MG1, MG1.transform.position, MG1.transform.rotation);
-        MMG2 = Instantiate(MG2, MG2.transform.position, MG2.transform.rotation);
+        MMG1 = Instantiate(MG1, pos1, MG1.transform.rotation);
+        MMG2 = Instantiate(MG2, pos2, MG2.transform.rotation);
 
         buttonFamily = GameObject.Find("ButtonFamily").transform;
         buttons = buttonFamily.gameObject.GetComponentsInChildren<Transform>();

@@ -37,7 +37,7 @@ public class CameraManager : MonoBehaviour
 
     public void SubCameraOn()
     {
-        subC.transform.position = new Vector3(10, 30, 0);
+        subC.transform.position = new Vector3(50, 30, 0);
         UI.SetActive(false);
         mainC.enabled = false;
         subC.enabled = true;

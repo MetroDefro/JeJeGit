@@ -28,7 +28,7 @@ public class MinigameDrop : MonoBehaviour
     {
         if (MinigameManager.instance.bNum == GameObject.FindGameObjectsWithTag("MinigameTrigger").Length)
         {
-            camera.transform.position = new Vector3(30, 30, 0);
+            camera.transform.position = new Vector3(70, 30, 0);
                 
             MinigameManager.instance.isMini2 = true;
             return;

@@ -35,6 +35,8 @@ public class CsLift : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 0.4f);
             SoundManager.instance.ButtonSound();
             term = level / 0.1;
+            if (collider.gameObject.tag == "MBlock")
+                GetComponent<Collider>().isTrigger = true;
             StartCoroutine(ConversionDelay());
         }
     }
@@ -45,6 +47,8 @@ public class CsLift : MonoBehaviour
         {
             term = level / 0.1;
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1f);
+            if (collider.gameObject.tag == "MBlock")
+                GetComponent<Collider>().isTrigger = false;
             StartCoroutine(ConversionReturnDelay());
         }
     }

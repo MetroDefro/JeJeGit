@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8814812592495214944}
   - component: {fileID: 5619184796042153669}
   - component: {fileID: 7647021479934999055}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: mini_house_b
   m_TagString: Untagged
   m_Icon: {fileID: 0}

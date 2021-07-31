@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6951541279119127741}
   - component: {fileID: 6329543620216175384}
   - component: {fileID: 8085079718254333906}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: house_doorless_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -25,6 +25,16 @@ public class Button : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 0.4f);
             SoundManager.instance.ButtonSound();
             blocks.SetActive(false);
+
+            if (collision.gameObject.tag == "MBlock")
+                GetComponent<Collider>().isTrigger = true;
         }
+    }
+
+    private void OnCollisionOut(Collision collision)
+    {
+        if (collision.gameObject.tag == "MBlock")
+            GetComponent<Collider>().isTrigger = false;
+
     }
 }
