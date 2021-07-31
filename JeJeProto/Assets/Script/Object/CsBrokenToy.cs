@@ -115,7 +115,7 @@ public class CsBrokenToy : MonoBehaviour
 
         MinigameManager.instance.Toy = this.gameObject;
         CameraManager.instance.SubCameraOn();
-        MinigameManager.instance.StartGame(MG1, MG2, pointAmount, endAmound, maxC, Bnum, RimitT);
+        MinigameManager.instance.StartGame(MG1, MG2, pointAmount, endAmound, maxC, Bnum, RimitT, gameObject);
 
     }
 
