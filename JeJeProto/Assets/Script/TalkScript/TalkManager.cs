@@ -107,8 +107,12 @@ public class TalkManager : MonoBehaviour
             n = 4;
         else if (nameData == "소녀 인형" || nameData == "애너벨")
             n = 5;
-        else if (nameData == "쿠션 인형" || nameData == "몽몽이")
+        else if (nameData == "쿠션인형" || nameData == "몽몽이")
             n = 6;
+        else if (nameData == "토끼인형" || nameData == "르시")
+            n = 7;
+        else if (nameData == "자동차 장난감" || nameData == "레키")
+            n = 8;
         sprites[n].SetActive(true);
 
         talkIndex++;
