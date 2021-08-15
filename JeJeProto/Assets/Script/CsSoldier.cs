@@ -11,6 +11,7 @@ public class CsSoldier : MonoBehaviour
 
     Vector3 PPos;
     bool canMove;
+    bool founding;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class CsSoldier : MonoBehaviour
         animator = GetComponent<Animator>();
 
         canMove = false;
+        founding = false;
     }
 
     // Update is called once per frame
@@ -29,10 +31,16 @@ public class CsSoldier : MonoBehaviour
             Move();
         else
             Direction();
+        blocked();
     }
 
     private void Direction()
     {
+        if (founding) // 벽에 막혀서 방향 찾는 중이면
+        {
+            rigidbody.MovePosition(transform.position + transform.forward * 1f * Time.deltaTime); // 바라보는 방향 쪽으로 이동
+            return;
+        }
         // 제제와 객체의 위치 계산
         if ((player.transform.position.x - transform.position.x) >= (player.transform.position.z - transform.position.z)) //x축이 더 멀면
         {
@@ -58,18 +66,26 @@ public class CsSoldier : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void blocked()
     {
-        //콜리전 태그 확인, 벽
-        if (collision.gameObject.tag == "Wall")
-        {
-            canMove = false;
-        }
-        // 콜라이더 막힌 경우 다른 방향으로 이동하게 하는 것 필요
-        // 90도씩 다 돌려보기?
-        // 그리고 그냥 앞으로 이동?
-        // 코루틴으로 이렇게 이동하는 것은 한 5초? 10초? 정도로 하고 이거 끝나면 다시 체크해서 움직여보기
-        // 코루틴 중이든 뭐든 또 콜라이더 걸린다면 다른 방향으로 틀어야됨 ㅇㅇ
-    }
+        RaycastHit hit;
 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 0.5f))
+        {
+            if(hit.collider.gameObject.tag == "Wall")
+                founding = true;
+                canMove = false;
+                // 콜라이더 막힌 경우 다른 방향으로 이동하게 하는 것 필요
+                // 90도씩 다 돌려보기?
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+                StartCoroutine(Timer());
+
+        }
+    }
+    IEnumerator Timer()
+    {
+        // 코루틴으로 이렇게 이동하는 것은 한 5초? 10초? 정도로 하고 이거 끝나면 다시 체크해서 움직여보기
+        yield return new WaitForSeconds(2f);
+        founding = false;
+    }
 }
