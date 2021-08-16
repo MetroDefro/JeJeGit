@@ -324,6 +324,8 @@ public class GameManager : MonoBehaviour
 
     private void Talking()
     {
+        if (saveHouse == null)
+            return;
         if (!(Vector3.Distance(player.transform.position, saveHouse.transform.position) < 0.5))
             return;
         if (!TalkManager.instance.isTalking)
