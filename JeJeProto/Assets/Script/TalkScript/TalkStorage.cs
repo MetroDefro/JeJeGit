@@ -295,6 +295,10 @@ public class TalkStorage : MonoBehaviour
             "여기로 쭉 가면 장난감 성으로 가는 배가 있어 우린 그걸 탈 거야."
         });
 
+        talkData.Add(100, new string[] {
+            "정말 배를 타러 갈 거야?"
+        });
+
         // 인형과 대화 스크립트
 
         // 찢어진 인형

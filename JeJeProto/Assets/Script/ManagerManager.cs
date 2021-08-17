@@ -8,6 +8,7 @@ public class ManagerManager : MonoBehaviour
 
 
     public bool Relese;
+    public int CountFixedToy;
 
     void Awake()
     {

@@ -27,6 +27,8 @@ public class CsBair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraManager.instance.subC.enabled)
+            return;
         Break();
 
         if (isGo)

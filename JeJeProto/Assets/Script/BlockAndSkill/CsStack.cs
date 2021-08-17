@@ -21,6 +21,8 @@ public class CsStack: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraManager.instance.subC.enabled)
+            return;
         Stack();
 
         if (isGo)

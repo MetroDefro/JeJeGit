@@ -19,6 +19,8 @@ public class CsCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraManager.instance.subC.enabled)
+            return;
         if (isGo)
             Go();
         else

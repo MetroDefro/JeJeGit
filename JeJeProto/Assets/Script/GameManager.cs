@@ -102,9 +102,6 @@ public class GameManager : MonoBehaviour
         //상호작용 버튼
         inter = Input.GetKeyDown("e");
 
-        //UI 교체
-        SetUi();
-
         Ekey.SetActive(false);
 
         for (int i = 0; i < EUse.Length; i++)
@@ -231,10 +228,11 @@ public class GameManager : MonoBehaviour
     {
         parts--;
     }
-    //부품 UI
-    private void SetUi()
-    {
 
+    //고친 장난감 수 더하기
+    public void CountFix()
+    {
+        ManagerManager.instance.CountFixedToy++;
     }
 
     public void SaveGame()
@@ -263,8 +261,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("저장되었습니다");
         /*
         //나중에
-        7.펫 획득 정보
-        8.진행 중 스테이지 정보
+        진행 중 스테이지 정보
         */
         //저장하기 set어쩌고
         PlayerPrefs.Save();

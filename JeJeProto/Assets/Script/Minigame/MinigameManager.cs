@@ -208,16 +208,16 @@ public class MinigameManager : MonoBehaviour
             SoundManager.instance.MinigameClearSound();
             Instantiate(ClearIMG, pos, ClearIMG.transform.rotation).transform.parent = Par;
             yield return new WaitForSeconds(2f);
-            Toy.GetComponent<CsBrokenToy>().Fixed();
             Reset();
+            Toy.GetComponent<CsBrokenToy>().Fixed();
         }
         else
         {
             SoundManager.instance.MinigameFailSound();
             Instantiate(FailIMG, pos, FailIMG.transform.rotation).transform.parent = Par;
             yield return new WaitForSeconds(2f);
-            CameraManager.instance.MainCameraOn();
             Reset();
+            CameraManager.instance.MainCameraOn();
         }
     }
 }

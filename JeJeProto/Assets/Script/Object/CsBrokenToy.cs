@@ -144,6 +144,7 @@ public class CsBrokenToy : MonoBehaviour
         happyToy.SetActive(true);
         brokenToy.SetActive(false);
 
+        GameManager.instance.CountFix();
         fix = true;
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
 {
@@ -79,6 +80,10 @@ public class TalkManager : MonoBehaviour
             canvasUI.SetActive(true);
             // 0.1초 후에 isTalking 꺼지도록
             StartCoroutine(WaitForIt());
+
+            // 만약 이게 3스테이지 대화라면 대화가 끝난 뒤 다음 스테이지로
+            if(id == 512)
+                SceneManager.LoadScene("Stage4");
             return false;
         }
         isTalking = true;
