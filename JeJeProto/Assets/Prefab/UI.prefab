@@ -450,22 +450,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1274672448507985457}
     m_Modifications:
-    - target: {fileID: 732478898, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 732478899, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 732478899, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1761410784, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9039596116951642833, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -553,10 +537,6 @@ PrefabInstance:
     - target: {fileID: 9039596116951642837, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
       propertyPath: m_Name
       value: TalkCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 9039596116951642837, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d192affd8261f0f44a9c51e9c9f36396, type: 3}

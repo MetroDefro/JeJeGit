@@ -10,8 +10,8 @@ public class CsSoldier : MonoBehaviour
     private Animator animator;
 
     Vector3 PPos;
-    bool canMove;
-    bool founding;
+    public bool canMove;
+    public bool founding;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,11 @@ public class CsSoldier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        blocked();
         if (canMove)
             Move();
         else
             Direction();
-        blocked();
     }
 
     private void Direction()
@@ -70,7 +70,7 @@ public class CsSoldier : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 0.5f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 0.25f))
         {
             if(hit.collider.gameObject.tag == "Wall")
                 founding = true;

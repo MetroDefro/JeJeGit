@@ -118,6 +118,8 @@ public class TalkManager : MonoBehaviour
             n = 7;
         else if (nameData == "자동차 장난감" || nameData == "레키")
             n = 8;
+        else if (nameData == "로봇 장난감" || nameData == "타모르")
+            n = 9;
         sprites[n].SetActive(true);
 
         talkIndex++;
