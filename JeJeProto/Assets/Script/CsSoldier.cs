@@ -20,6 +20,8 @@ public class CsSoldier : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
+        animator.SetBool("Walk", true);
+
         canMove = false;
         founding = false;
     }
@@ -38,19 +40,19 @@ public class CsSoldier : MonoBehaviour
     {
         if (founding) // 벽에 막혀서 방향 찾는 중이면
         {
-            rigidbody.MovePosition(transform.position + transform.forward * 1f * Time.deltaTime); // 바라보는 방향 쪽으로 이동
+            rigidbody.MovePosition(transform.position + transform.forward * 0.256f * Time.deltaTime); // 바라보는 방향 쪽으로 이동
             return;
         }
         // 제제와 객체의 위치 계산
         if ((player.transform.position.x - transform.position.x) >= (player.transform.position.z - transform.position.z)) //x축이 더 멀면
         {
-            // 제제 X위치만 가져온 좌표 생성
-            PPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
+            // 제제 Z위치만 가져온 좌표 생성
+            PPos = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
         }
         else // 반대
         {
-            // 제제 Z위치만 가져온 좌표 생성
-            PPos = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
+            // 제제 X위치만 가져온 좌표 생성
+            PPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
 
         transform.LookAt(PPos); // 일단 이동 방향을 바라봄
@@ -59,10 +61,10 @@ public class CsSoldier : MonoBehaviour
 
     private void Move()
     {
-        animator.SetBool("Walk", true); // 걷기 모션 켜기
+       // animator.SetBool("Walk", true); // 걷기 모션 켜기
 
         
-        rigidbody.MovePosition(transform.position + transform.forward * 1f * Time.deltaTime); // 바라보는 방향 쪽으로 이동
+        rigidbody.MovePosition(transform.position + transform.forward * 0.256f * Time.deltaTime); // 바라보는 방향 쪽으로 이동
 
     }
 
@@ -70,9 +72,9 @@ public class CsSoldier : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 0.25f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 0.256f))
         {
-            if(hit.collider.gameObject.tag == "Wall")
+            if (hit.collider.gameObject.tag == "Wall")
                 founding = true;
                 canMove = false;
                 // 콜라이더 막힌 경우 다른 방향으로 이동하게 하는 것 필요
