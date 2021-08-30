@@ -35,6 +35,11 @@ public class TalkStorage : MonoBehaviour
             "즐리", "기본", "제제야 다시 출발해볼까?"
         });
 
+        // 부품 획득
+        talkData.Add(902, new string[] {
+            "제제", "기쁨", "장난감 수리 재료를 얻었어!",
+        });
+
         // 1스테이지 대화 스크립트
         // 시작
         talkData.Add(500, new string[] {
@@ -204,6 +209,13 @@ public class TalkStorage : MonoBehaviour
             "즐리", "기쁨", "마침 장난감 성이 보이기 시작했어! 배에서 내릴 준비하자!"
         });
 
+        // 엔딩
+        talkData.Add(513, new string[] {
+            "제제", "기쁨", "안녕하세요!",
+            "장난감 왕", "기쁨", "흠… 어떻게든 여기까지 왔구나",
+
+        });
+
         // 인형 재료 습득
         talkData.Add(600, new string[] {
             "인형을 고칠 수 있는 재료를 얻었다."
@@ -295,9 +307,19 @@ public class TalkStorage : MonoBehaviour
             "여기로 쭉 가면 장난감 성으로 가는 배가 있어 우린 그걸 탈 거야."
         });
 
-        talkData.Add(100, new string[] {
-            "정말 배를 타러 갈 거야?"
+        talkData.Add(21, new string[] {
+            "여기서 우리는 못 도와줘 저 병정을 피해서 왕에게 가자!"
         });
+
+        talkData.Add(21, new string[] {
+            "여기서 우리는 못 도와줘 저 병정을 피해서 왕에게 가자!"
+        });
+
+        talkData.Add(100, new string[] {
+            "이 성 끝에 장난감 왕이 있어!"
+        });
+
+
 
         // 인형과 대화 스크립트
 

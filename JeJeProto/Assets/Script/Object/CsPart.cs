@@ -19,6 +19,8 @@ public class CsPart : MonoBehaviour
 
         if (GameManager.instance.inter)
             Inter();
+
+        Talking();
     }
 
 
@@ -29,11 +31,26 @@ public class CsPart : MonoBehaviour
             return;
 
         //Debug.Log("인터렉션");
-        //부품을 얻으면 무엇을 보여주지? 얻었다! 하는 UI Image?
+        TalkManager.instance.Talk(902);
 
-        //부품 얻고, 상자 부순다.
-        GameManager.instance.GetPart();
-        gameObject.SetActive(false);
+
         //Destroy(gameObject);
+    }
+
+    private void Talking()
+    {
+        if (Vector3.Distance(player.transform.position, transform.position) > 0.5)
+            return;
+        if (!TalkManager.instance.isTalking)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TalkManager.instance.Talk(902);
+
+            //부품 얻고, 상자 부순다.
+            GameManager.instance.GetPart();
+            gameObject.SetActive(false);
+        }
     }
 }
