@@ -21,6 +21,7 @@ TagManager:
   - Place
   - MinigameTrigger
   - Wool
+  - jeje
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,8 @@ TagManager:
   - MiniGame
   - MiniGameClick
   - Button
-  - 
-  - 
+  - InvisibleWall
+  - soldier
   - 
   - 
   - 
