@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CsSoldier : MonoBehaviour
 {
@@ -96,6 +97,13 @@ public class CsSoldier : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Player")
             {
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 0.256f))
+                {
+                    if (hit.collider.gameObject.tag == "Player")
+                    {
+                        SceneManager.LoadScene("Stage4");
+                    }
+                }
                 StartCoroutine(Bust());
             }
         }
@@ -120,12 +128,12 @@ public class CsSoldier : MonoBehaviour
         if ((player.transform.position.x - transform.position.x) >= (player.transform.position.z - transform.position.z)) //x축이 더 멀면
         {
             // 제제 z위치만 가져온 좌표 생성
-            PPos = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
+            PPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
         else // 반대
         {
             // 제제 x위치만 가져온 좌표 생성
-            PPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
+            PPos = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
         }
         transform.LookAt(PPos); // 일단 이동 방향을 바라봄
 
