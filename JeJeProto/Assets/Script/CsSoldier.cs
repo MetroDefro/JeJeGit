@@ -113,6 +113,7 @@ public class CsSoldier : MonoBehaviour
     {
         speed = 2;
         chace = true;
+        SoundManager.instance.SirenPlay();
 
         FindPlayer();
 
@@ -120,6 +121,7 @@ public class CsSoldier : MonoBehaviour
         yield return new WaitForSeconds(8f);
         chace = false;
         speed = 1;
+        SoundManager.instance.SirenStop();
     }
 
     private void FindPlayer()

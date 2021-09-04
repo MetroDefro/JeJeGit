@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     public AudioSource BGM;
     public AudioSource playerAudio;
+    public AudioSource Siren;
 
     public AudioClip UseSkill;
 
@@ -35,6 +36,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip MinigameCloth;
     public AudioClip MinigameCotton;
     public AudioClip MinigameWool;
+
 
     // Start is called before the first frame update
     void Start()
@@ -186,6 +188,16 @@ public class SoundManager : MonoBehaviour
     public void PlayerSoundStop()
     {
         playerAudio.Stop();
+    }
+
+    public void SirenPlay()
+    {
+        Siren.Play();
+    }
+
+    public void SirenStop()
+    {
+        Siren.Stop();
     }
 
 }

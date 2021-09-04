@@ -20,8 +20,12 @@ public class MinigameManager : MonoBehaviour
 
     private Transform buttonFamily;
     private Transform buttonFamily2;
+    private Transform buttonFamily3;
+    private Transform buttonFamily4;
     private Transform[] buttons;
     private Transform[] buttons2;
+    private Transform[] buttons3;
+    private Transform[] buttons4;
 
     private GameObject MG1;
     private GameObject MG2;
@@ -80,6 +84,16 @@ public class MinigameManager : MonoBehaviour
         {
             buttonFamily2 = GameObject.Find("ButtonFamily (1)").transform;
             buttons2 = buttonFamily2.gameObject.GetComponentsInChildren<Transform>();
+        }
+        if (GameObject.Find("ButtonFamily (2)") != null)
+        {
+            buttonFamily3 = GameObject.Find("ButtonFamily (2)").transform;
+            buttons3 = buttonFamily3.gameObject.GetComponentsInChildren<Transform>();
+        }
+        if (GameObject.Find("ButtonFamily (3)") != null)
+        {
+            buttonFamily4 = GameObject.Find("ButtonFamily (3)").transform;
+            buttons4 = buttonFamily4.gameObject.GetComponentsInChildren<Transform>();
         }
 
         Mini1UI = GameObject.Find("MiniGameUI1");
@@ -176,7 +190,34 @@ public class MinigameManager : MonoBehaviour
                 }
             }
         }
-
+        if (buttons3 != null)
+        {
+            for (int i = 1; i < buttons3.Length; i++)
+            {
+                if (buttons3[i].gameObject.GetComponent<MinigameLine>().clicked)
+                {
+                    sum++;
+                    if (buttons3[i].gameObject.GetComponent<MinigameLine>().strongButton)
+                        point++;
+                    if (buttons3[i].gameObject.GetComponent<MinigameLine>().endButton)
+                        ends++;
+                }
+            }
+        }
+        if (buttons4 != null)
+        {
+            for (int i = 1; i < buttons2.Length; i++)
+            {
+                if (buttons4[i].gameObject.GetComponent<MinigameLine>().clicked)
+                {
+                    sum++;
+                    if (buttons4[i].gameObject.GetComponent<MinigameLine>().strongButton)
+                        point++;
+                    if (buttons4[i].gameObject.GetComponent<MinigameLine>().endButton)
+                        ends++;
+                }
+            }
+        }
         // end 다 채웠나?
         if (endAmount != ends)
             return;
