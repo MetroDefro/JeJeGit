@@ -40,7 +40,6 @@ public class Fade : MonoBehaviour
 
         else if (fades <= 0f)
         {
-
             StartCoroutine(Loading());
             Destroy(fade);
             Destroy(image);
@@ -62,5 +61,4 @@ public class Fade : MonoBehaviour
         talkUI.SetActive(true);
         SoundManager.instance.SoundPlay();
     }
-
 }

@@ -29,6 +29,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip Portal;
     public AudioClip Button;
 
+    public AudioClip sirenSound;
+
     // 미니 게임
     public AudioClip MinigameClear;
     public AudioClip MinigameFail;
@@ -192,6 +194,7 @@ public class SoundManager : MonoBehaviour
 
     public void SirenPlay()
     {
+        Siren.clip = sirenSound;
         Siren.Play();
     }
 

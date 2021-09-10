@@ -18,14 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1.unity
     guid: 73a05808c5385984099a8bf4623ae8ac
   - enabled: 0
-    path: Assets/Scenes/Stage1 Old.unity
-    guid: de91d623b9c46ef47bc00b4123fb07c3
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/stage2_puzzle2.unity
-    guid: 664baf1d5e60e7646af6fe3ec3d0ffad
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Stage2.unity
     guid: b6ad1fcec7bdb7049850f32ba2a897d0
@@ -33,6 +33,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage3.unity
     guid: 46fd42c79247ab24d825e7f7f69567db
   - enabled: 1
-    path: Assets/Scenes/stage4.unity
+    path: Assets/Scenes/Stage4.unity
     guid: 1958d68f8aa01554f87091e561883578
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 868186f786181e540ab9e00a1f0b4a73
+  - enabled: 1
+    path: Assets/Scenes/NormalEnding.unity
+    guid: ae3fa6890886e91439ffd35eda419da2
+  - enabled: 1
+    path: Assets/Scenes/HappyEnding.unity
+    guid: 5ef6d300e11f2f74fba5c1b5ee0cba7c
   m_configObjects: {}

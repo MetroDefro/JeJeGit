@@ -84,6 +84,12 @@ public class TalkManager : MonoBehaviour
             // 만약 이게 3스테이지 대화라면 대화가 끝난 뒤 다음 스테이지로
             if(id == 512)
                 SceneManager.LoadScene("Stage4");
+            else if (id == 514)
+                SceneManager.LoadScene("BadEnding");
+            else if (id == 515)
+                SceneManager.LoadScene("NormalEnding");
+            else if (id == 516)
+                SceneManager.LoadScene("HappyEnding");
             return false;
         }
         isTalking = true;
@@ -120,6 +126,8 @@ public class TalkManager : MonoBehaviour
             n = 8;
         else if (nameData == "로봇 장난감" || nameData == "타모르")
             n = 9;
+        else if (nameData == "장난감 왕")
+            n = 10;
         sprites[n].SetActive(true);
 
         talkIndex++;
