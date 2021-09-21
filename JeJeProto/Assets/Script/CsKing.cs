@@ -31,12 +31,12 @@ public class CsKing : MonoBehaviour
 
     private void Inter()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) > 0.5)
+        if (Vector3.Distance(player.transform.position, transform.position) > 1)
             return;
 
         if (TalkManager.instance.isTalking)
             return;
-
+        
         if (ManagerManager.instance.CountFixedToy <= 1)
             TalkManager.instance.Talk(514);
         else if (ManagerManager.instance.CountFixedToy <= 4)
