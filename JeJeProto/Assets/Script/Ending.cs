@@ -7,8 +7,10 @@ public class Ending : MonoBehaviour
 {
     public Image[] font;
     public Image[] credit;
-    float fade = 0.0f;
+    float fade = 1.0f;
     float time = 0;
+
+    public Image fadeIMG;
 
     int f;
     int c;
@@ -17,9 +19,12 @@ public class Ending : MonoBehaviour
 
     bool isFadeOut;
     bool isFadeIn;
+
+    bool first;
     // Start is called before the first frame update
     void Start()
     {
+        first = true;
         timer = false;
         f = 0;
         c = 0;
@@ -33,8 +38,6 @@ public class Ending : MonoBehaviour
             credit[i].color = new Color(1, 1, 1, 0);
         }
 
-        StartCoroutine(Delay());
-
         isFadeIn = false;
         isFadeOut = false;
     }
@@ -42,6 +45,13 @@ public class Ending : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (first){
+            FadeIn();
+            return;
+        }
+        
+
 
         if (f != font.Length)
         {
@@ -119,6 +129,23 @@ public class Ending : MonoBehaviour
         {
             c++;
             isFadeIn = false;
+        }
+    }
+
+    void FadeIn()
+    {
+        time += Time.deltaTime;
+        if (fade > 0.0f && time >= 0.1f)
+        {
+            fade -= 0.02f;
+            fadeIMG.color = new Color(0, 0, 0, fade);
+            time = 0;
+        }
+        else if (fade <= 0f)
+        {
+            first = false;
+            fade = 0.0f;
+            StartCoroutine(Delay());
         }
     }
 
