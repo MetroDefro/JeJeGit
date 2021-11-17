@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
     private bool[] partsActive;
     //캐릭터
     private GameObject player;
-    private GameObject saveHouse;
+    private GameObject[] saveHouse;
     //스킬 장난감
     public GameObject book;
     public GameObject bear;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        saveHouse = GameObject.Find("tent");
+        saveHouse = GameObject.FindGameObjectsWithTag("SaveHouse");
 
         player = GameObject.Find("Player");
         puzzles = GameObject.FindGameObjectsWithTag("Puzzle");
@@ -241,17 +242,16 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < objects.Length; i++)
             objects[i].GetComponent<CsObject>().SaveObject(i);
         PlayerPrefs.SetInt("parts", parts);
-        // 그리고 파츠 활성화된상태인지 비활성화된 상태인지도 조사해서
+        // 파츠 활성화된 상태인지 비활성화된 상태인지도 조사해서
         for (int i = 0; i<partsBoxes.Length; i++)
             partsActive[i] = partsBoxes[i].activeSelf;
         PlayerPrefsX.SetBoolArray("Boxes", partsActive);
 
-        // 텍스트 진입정보 보다는 그 id를 이미 쓴 적 있냐가?
-        // 좀 힘들듯 계속 같은 대사를 반복하는 경우도 필요한데?
+        // 텍스트 에리아
         for (int i = 0; i < talkArea.Length; i++)
             talkArea[i].GetComponent<CsTalkArea>().SaveTalkArea(i);
 
-        // 장난감은 3단계로 이루어짐. 구분하는 것은 toy.액티브와 fix bool임.
+        // 장난감은 3단계로 이루어짐. 구분하는 것은 toy.액티브와 fix bool
         for (int i = 0; i < toy.Length; i++)
             toy[i].GetComponent<CsBrokenToy>().SaveToy(i);
 
@@ -259,20 +259,20 @@ public class GameManager : MonoBehaviour
             puzzles[i].GetComponent<CsPuzzle>().SavePuzzle(i);
 
         Debug.Log("저장되었습니다");
-        /*
-        //나중에
-        진행 중 스테이지 정보
-        */
-        //저장하기 set어쩌고
+
+        //저장하기
         PlayerPrefs.Save();
 
-        
-        if (Vector3.Distance(player.transform.position, saveHouse.transform.position) < 0.5)
+        for(int i = 0; i<saveHouse.Length; i++)
         {
-            TalkManager.instance.Talk(900);
-            iNum = 900;
+            if (Vector3.Distance(player.transform.position, saveHouse[i].transform.position) < 0.5)
+            {
+                TalkManager.instance.Talk(900);
+                iNum = 900;
+            }
+
         }
-        
+
     }
 
     public void GameOver()
@@ -303,10 +303,14 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < puzzles.Length; i++)
             puzzles[i].GetComponent<CsPuzzle>().LoadPuzzle(i);
 
-        if (Vector3.Distance(player.transform.position, saveHouse.transform.position) < 0.5)
+        for (int i = 0; i < saveHouse.Length; i++)
         {
-            TalkManager.instance.Talk(901);
-            iNum = 901;
+            if (Vector3.Distance(player.transform.position, saveHouse[i].transform.position) < 0.5)
+            {
+                TalkManager.instance.Talk(901);
+                iNum = 901;
+            }
+
         }
 
 
@@ -321,10 +325,15 @@ public class GameManager : MonoBehaviour
 
     private void Talking()
     {
-        if (saveHouse == null)
+        for (int i = 0; i < saveHouse.Length; i++)
+            if (saveHouse[i] == null)
             return;
-        if (!(Vector3.Distance(player.transform.position, saveHouse.transform.position) < 0.5))
-            return;
+        for (int i = 0; i < saveHouse.Length; i++)
+        {
+            if (!(Vector3.Distance(player.transform.position, saveHouse[i].transform.position) < 0.5))
+                return;
+        }
+
         if (!TalkManager.instance.isTalking)
             return;
 

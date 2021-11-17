@@ -30,7 +30,8 @@ public class CsNextStage : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, transform.position) > 0.5)
             return;
+        if (ManagerManager.instance.CountFixedToy == 1)
+            SceneManager.LoadScene("Stage2");
 
-        SceneManager.LoadScene("Stage2");
     }
 }
