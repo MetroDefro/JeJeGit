@@ -13,7 +13,6 @@ public class CsSoldier : MonoBehaviour
     Vector3 PPos;
     //public bool canMove;
     private bool founding;
-    private bool time;
 
     public int speed;
     private bool chace;
@@ -28,11 +27,8 @@ public class CsSoldier : MonoBehaviour
         animator.SetBool("Walk", true);
 
         founding = false;
-        time = true;
 
         chace = false;
-
-        FindPlayer();
 
         speed = 1;
     }
@@ -71,22 +67,9 @@ public class CsSoldier : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Wall")
             {
-                if (time)
-                    StartCoroutine(Timer());
-                else
-                    founding = true;
+                founding = true;
             }
         }
-    }
-    IEnumerator Timer()
-    {
-        time = false;
-
-        FindPlayer();
-
-        // 8초마다 제제 위치 확인해서 시선
-        yield return new WaitForSeconds(8f);
-        time = true;
     }
 
     private void SeePlayer()
@@ -126,15 +109,16 @@ public class CsSoldier : MonoBehaviour
 
     private void FindPlayer()
     {
+        Debug.Log("찾는중?");
         // 제제와 객체의 위치 계산
-        if ((player.transform.position.x - transform.position.x) >= (player.transform.position.z - transform.position.z)) //x축이 더 멀면
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) >= Mathf.Abs(player.transform.position.z - transform.position.z)) //x축이 더 멀면
         {
-            // 제제 z위치만 가져온 좌표 생성
+            // 제제 x위치만 가져온 좌표 생성
             PPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
         else // 반대
         {
-            // 제제 x위치만 가져온 좌표 생성
+            // 제제 z위치만 가져온 좌표 생성
             PPos = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
         }
         transform.LookAt(PPos); // 일단 이동 방향을 바라봄

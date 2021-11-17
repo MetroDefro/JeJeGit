@@ -327,19 +327,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < saveHouse.Length; i++)
             if (saveHouse[i] == null)
-            return;
+                return;
         for (int i = 0; i < saveHouse.Length; i++)
         {
-            if (!(Vector3.Distance(player.transform.position, saveHouse[i].transform.position) < 0.5))
-                return;
+            if ((Vector3.Distance(player.transform.position, saveHouse[i].transform.position) < 0.5))
+            {
+                if (!TalkManager.instance.isTalking)
+                    return;
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    TalkManager.instance.Talk(iNum);
+                }
+            }
         }
 
-        if (!TalkManager.instance.isTalking)
-            return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TalkManager.instance.Talk(iNum);
-        }
     }
 }
