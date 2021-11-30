@@ -23,7 +23,7 @@ public class ManagerManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        stageNum = 1;
+        stageNum = 0;
     }
 
     // Start is called before the first frame update

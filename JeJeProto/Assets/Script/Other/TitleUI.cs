@@ -22,6 +22,7 @@ public class TitleUI : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         ManagerManager.instance.CountFixedToy = 0;
+        ManagerManager.instance.stageNum = 1;
         SceneManager.LoadScene("Intro");
         ManagerManager.instance.Relese = false;
     }
@@ -33,11 +34,16 @@ public class TitleUI : MonoBehaviour
             SceneManager.LoadScene("Stage2");
             ManagerManager.instance.Relese = true;
         }
-        else
+        else if (PlayerPrefs.GetInt("stageNum") == 1)
         {
             SceneManager.LoadScene("Stage1");
             ManagerManager.instance.Relese = true;
         }
+        else if (PlayerPrefs.GetInt("stageNum") == 0)
+        {
+
+        }
+
 
     }
 }
