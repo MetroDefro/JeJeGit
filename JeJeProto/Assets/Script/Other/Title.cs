@@ -25,24 +25,6 @@ public class Title : MonoBehaviour
 
     }
 
-    /*
-    IEnumerator MoveText()
-    {
-        moving = true;
-        for(int i = 20; i < 26; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
-            moveT.fontSize = i;
-        }
-        for (int i = 26; i >= 20; i--)
-        {
-            yield return new WaitForSeconds(0.1f);
-            moveT.fontSize = i;
-        }
-        moving = false;
-    }
-    */
-
     void GoFade()
     {
         if (!isFade)

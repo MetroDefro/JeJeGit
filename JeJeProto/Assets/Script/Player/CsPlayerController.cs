@@ -34,7 +34,6 @@ public class CsPlayerController : MonoBehaviour
 
     public GameObject followTarget;
 
-    //public Collider Puzzle { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -106,25 +105,10 @@ public class CsPlayerController : MonoBehaviour
         movement = transform.TransformDirection(movement);
         movement = movement.normalized * moveSpeed * Time.deltaTime;
 
-        /*
-        Vector3 moveDistanceF;
-        Vector3 moveDistanceR;
-
-        //moveDistance = new Vector3(0, 0, playerInput.move * -1);
-        moveDistanceF = playerInput.move * transform.forward * moveSpeed * Time.deltaTime;
-        //moveDistance = new Vector3(playerInput.rotate, 0, 0);
-        moveDistanceR = playerInput.rotate * -1 * transform.right * moveSpeed * Time.deltaTime;
-
-        */
 
         //대쉬중인가?
         if (playerInput.dash)
         {
-            /*
-            playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF * 1.5f);
-            playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR * 1.5f);
-            */
-
             playerRigidbody.MovePosition(playerRigidbody.position + movement * 1.5f);
 
             playerAnimator.SetBool("Dash", true);
@@ -133,10 +117,7 @@ public class CsPlayerController : MonoBehaviour
             return;
         }
         playerAnimator.SetBool("Dash", false);
-        /*
-        playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceF);
-        playerRigidbody.MovePosition(playerRigidbody.position + moveDistanceR);
-        */
+
 
         playerRigidbody.MovePosition(playerRigidbody.position + movement);
 
@@ -148,7 +129,6 @@ public class CsPlayerController : MonoBehaviour
     
     private void Rotate()
     {
-        //playerRigidbody.rotation = Quaternion.Euler(0, followTarget.transform.localEulerAngles.y - 180f, 0);
 
         if (movement != Vector3.zero)
         {

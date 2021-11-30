@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     //E키 UI
     public GameObject Ekey;
 
+    // 메뉴
+    public GameObject Menu;
+
+
     //E키 사용하는 모든 것
     public GameObject[] EUse;
 
@@ -114,6 +118,13 @@ public class GameManager : MonoBehaviour
 
         Talking();
 
+        if (Input.GetKeyDown("q"))
+        {
+            if (Menu.activeSelf)
+                Menu.SetActive(false);
+            else
+                Menu.SetActive(true);
+        }
 
     }
 
@@ -258,6 +269,8 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < puzzles.Length; i++)
             puzzles[i].GetComponent<CsPuzzle>().SavePuzzle(i);
 
+        PlayerPrefs.SetInt("stageNum", ManagerManager.instance.stageNum);
+
         Debug.Log("저장되었습니다");
 
         //저장하기
@@ -341,7 +354,5 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
-
     }
 }

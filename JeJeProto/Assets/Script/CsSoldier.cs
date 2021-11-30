@@ -47,7 +47,7 @@ public class CsSoldier : MonoBehaviour
 
     private void Direction()
     {
-        //임의 회전. 랜덤으로 값을 주도록 해도 괜찮을듯 (90*n)
+        //임의 회전. (90*n)
         transform.Rotate(new Vector3(0, 90 * Random.Range(0, 4), 0));
 
         founding = false;
@@ -109,7 +109,6 @@ public class CsSoldier : MonoBehaviour
 
     private void FindPlayer()
     {
-        Debug.Log("찾는중?");
         // 제제와 객체의 위치 계산
         if (Mathf.Abs(player.transform.position.x - transform.position.x) >= Mathf.Abs(player.transform.position.z - transform.position.z)) //x축이 더 멀면
         {

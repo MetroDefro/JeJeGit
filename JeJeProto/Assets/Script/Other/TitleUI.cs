@@ -21,13 +21,23 @@ public class TitleUI : MonoBehaviour
     public void GameStart()
     {
         PlayerPrefs.DeleteAll();
+        ManagerManager.instance.CountFixedToy = 0;
         SceneManager.LoadScene("Intro");
         ManagerManager.instance.Relese = false;
     }
 
     public void GameRelese()
     {
-        SceneManager.LoadScene("Stage1");
-        ManagerManager.instance.Relese = true;
+        if(PlayerPrefs.GetInt("stageNum") == 2)
+        {
+            SceneManager.LoadScene("Stage2");
+            ManagerManager.instance.Relese = true;
+        }
+        else
+        {
+            SceneManager.LoadScene("Stage1");
+            ManagerManager.instance.Relese = true;
+        }
+
     }
 }

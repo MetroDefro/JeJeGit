@@ -9,6 +9,7 @@ public class ManagerManager : MonoBehaviour
 
     public bool Relese;
     public int CountFixedToy;
+    public int stageNum;
 
     void Awake()
     {
@@ -21,6 +22,8 @@ public class ManagerManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        stageNum = 1;
     }
 
     // Start is called before the first frame update

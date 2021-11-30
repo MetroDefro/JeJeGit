@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CsPart : MonoBehaviour
 {
+    private bool first;
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        first = false;
         player = GameObject.Find("Player");
 
     }
@@ -19,6 +21,7 @@ public class CsPart : MonoBehaviour
 
         if (GameManager.instance.inter)
             Inter();
+
 
         Talking();
     }
@@ -31,8 +34,9 @@ public class CsPart : MonoBehaviour
             return;
 
         //Debug.Log("인터렉션");
-        TalkManager.instance.Talk(902);
-
+        if (!first)
+            TalkManager.instance.Talk(902);
+        first = true;
 
         //Destroy(gameObject);
     }
